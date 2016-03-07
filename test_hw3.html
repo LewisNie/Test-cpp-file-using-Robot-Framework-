@@ -1,0 +1,981 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=185 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-before: always">
+	<COL WIDTH=52>
+	<COL WIDTH=106>
+	<TR VALIGN=TOP>
+		<TH WIDTH=52>
+			<P>Settings</P>
+		</TH>
+		<TH WIDTH=106>
+			<P>Value</P>
+		</TH>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=52>
+			<P>Library</P>
+		</TD>
+		<TD WIDTH=106>
+			<P>Process</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=52>
+			<P>Library</P>
+		</TD>
+		<TD WIDTH=106>
+			<P>OperatingSystem</P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=52>
+			<P>Test Timeout</P>
+		</TD>
+		<TD WIDTH=106>
+			<P>1 minute</P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=501 BORDER=1 CELLPADDING=4 CELLSPACING=3>
+	<COL WIDTH=83>
+	<COL WIDTH=117>
+	<COL WIDTH=129>
+	<COL WIDTH=123>
+	<TR VALIGN=TOP>
+		<TH WIDTH=83>
+			<P>Test Case</P>
+		</TH>
+		<TH WIDTH=117>
+			<P><BR>
+			</P>
+		</TH>
+		<TH WIDTH=129>
+			<P><BR>
+			</P>
+		</TH>
+		<TH WIDTH=123>
+			<P><BR>
+			</P>
+		</TH>
+        <TH WIDTH=123>
+			<P><BR>
+			</P>
+		</TH>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check add position</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Check_add_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Check_add_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	 <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check Invalid Number</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Invalid_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stderr}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Invalid_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stderr}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check Invalid position</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Invalid_position_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stderr}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Invalid_position_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stderr}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check quit program option</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; quit_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.rc}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>quit_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Convert To Number</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>0</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Be Equal</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.rc}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check Display</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Display_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Display_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check FirstName Input</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; FirstName_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>FirstName_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check LastName Input</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; LastName_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>LastName_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check uniform number Input</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Uniform_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Uniform_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check uniform number Input</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; Uniform_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Uniform_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check Valid position</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>./hw1cpp &lt; ValidPosition_input.txt </P>
+		</TD>
+        <TD WIDTH=123>
+			<P>shell=True </P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>ValidPosition_output.txt</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+    <TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log To Console</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>get the expected output</P>
+		</TD>
+		<TD WIDTH=123>
+			<P></P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+        <TD WIDTH=123>
+			<P></P>
+		</TD>
+	</TR>
+   
+	</TABLE>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

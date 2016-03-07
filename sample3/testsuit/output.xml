@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150426 23:14:28.817" generator="Robot 2.8.7 (Python 2.7.5 on darwin)">
+<suite source="/Users/LuyuanNie/Desktop/study/Python/sample3/testsuit/test_features.html" id="s1" name="Test Features">
+<test id="s1-t1" name="Check assignment">
+<kw type="kw" name="${VAR} = BuiltIn.Convert To Integer">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.923" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20150426 23:14:28.923" level="INFO">${VAR} = 10</msg>
+<status status="PASS" endtime="20150426 23:14:28.923" starttime="20150426 23:14:28.922"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${VAR}</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.923" level="INFO">10</msg>
+<status status="PASS" endtime="20150426 23:14:28.924" starttime="20150426 23:14:28.923"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150426 23:14:28.924" critical="yes" starttime="20150426 23:14:28.920"></status>
+</test>
+<test id="s1-t2" name="General expression">
+<kw type="kw" name="${VAR} = BuiltIn.Evaluate">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(range(2,${BOUND},3))</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.925" level="INFO">${VAR} = [2, 5]</msg>
+<status status="PASS" endtime="20150426 23:14:28.925" starttime="20150426 23:14:28.925"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${VAR}</arg>
+<arg>[2, 5]</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.926" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150426 23:14:28.926" starttime="20150426 23:14:28.926"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150426 23:14:28.926" critical="yes" starttime="20150426 23:14:28.924"></status>
+</test>
+<test id="s1-t3" name="Check call to python function">
+<kw type="kw" name="${RESULT} = StockOpinions.Compare">
+<doc>Compare two stock analyst opinions</doc>
+<arguments>
+<arg>buy</arg>
+<arg>strong buy</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.928" level="INFO">${RESULT} = -1</msg>
+<status status="PASS" endtime="20150426 23:14:28.928" starttime="20150426 23:14:28.927"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be True">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${RESULT} &lt; 0</arg>
+</arguments>
+<status status="PASS" endtime="20150426 23:14:28.928" starttime="20150426 23:14:28.928"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150426 23:14:28.929" critical="yes" starttime="20150426 23:14:28.927"></status>
+</test>
+<test id="s1-t4" name="Test Current Opinions">
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ALL_OPINIONS}</arg>
+</arguments>
+<status status="PASS" endtime="20150426 23:14:28.930" starttime="20150426 23:14:28.930"></status>
+</kw>
+<kw type="kw" name="@{CURR} = StockOpinions.Current Opinions">
+<doc>Return list of only the most current opinion of each analyst</doc>
+<arguments>
+<arg>${ALL_OPINIONS}</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.931" level="INFO">@{CURR} = [ buy | strong sell ]</msg>
+<status status="PASS" endtime="20150426 23:14:28.931" starttime="20150426 23:14:28.930"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${CURR}</arg>
+<arg>${CURR_EXPD}</arg>
+</arguments>
+<msg timestamp="20150426 23:14:28.931" level="INFO">Argument types are:
+&lt;type 'list'&gt;
+&lt;type 'list'&gt;</msg>
+<status status="PASS" endtime="20150426 23:14:28.931" starttime="20150426 23:14:28.931"></status>
+</kw>
+<doc>Multi-word keyword from Python function Assigning to list variable</doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150426 23:14:28.931" critical="yes" starttime="20150426 23:14:28.929"></status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150426 23:14:28.932" starttime="20150426 23:14:28.817"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="4" id="s1" name="Test Features">Test Features</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

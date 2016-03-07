@@ -1,0 +1,145 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="David Yang">
+	<META NAME="CREATED" CONTENT="20150416;18252300">
+	<META NAME="CHANGEDBY" CONTENT="David Yang">
+	<META NAME="CHANGED" CONTENT="20150417;7561086">
+	<META NAME="CHANGEDBY" CONTENT="David Yang">
+	<META NAME="CHANGEDBY" CONTENT="David Yang">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=185 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-before: always">
+	<COL WIDTH=52>
+	<COL WIDTH=106>
+	<TR VALIGN=TOP>
+		<TH WIDTH=52>
+			<P>Settings</P>
+		</TH>
+		<TH WIDTH=106>
+			<P>Value</P>
+		</TH>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=52>
+			<P>Library</P>
+		</TD>
+		<TD WIDTH=106>
+			<P>Process</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=52>
+			<P>Library</P>
+		</TD>
+		<TD WIDTH=106>
+			<P>OperatingSystem</P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=501 BORDER=1 CELLPADDING=4 CELLSPACING=3>
+	<COL WIDTH=83>
+	<COL WIDTH=117>
+	<COL WIDTH=129>
+	<COL WIDTH=123>
+	<TR VALIGN=TOP>
+		<TH WIDTH=83>
+			<P>Test Case</P>
+		</TH>
+		<TH WIDTH=117>
+			<P><BR>
+			</P>
+		</TH>
+		<TH WIDTH=129>
+			<P><BR>
+			</P>
+		</TH>
+		<TH WIDTH=123>
+			<P><BR>
+			</P>
+		</TH>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P>Check stdout</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${RESULT}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Run Process</P>
+		</TD>
+		<TD WIDTH=123>
+			./hello
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>Hello world!</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Log</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.rc}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>${EXPECTED}=</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>Get File</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>expected_output.txt</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=83>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=117>
+			<P>Should Match</P>
+		</TD>
+		<TD WIDTH=129>
+			<P>${RESULT.stdout}</P>
+		</TD>
+		<TD WIDTH=123>
+			<P>${EXPECTED}</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

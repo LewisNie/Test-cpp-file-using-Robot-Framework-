@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150427 23:49:01.260" generator="Robot 2.8.7 (Python 2.7.5 on darwin)">
+<suite source="/Users/LuyuanNie/Desktop/study/Python/hw3/test_hw3.html" id="s1" name="Test Hw3">
+<test id="s1-t1" timeout="1 minute" name="Check add position">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Check_add_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.320" level="INFO">Starting process:
+./hw1cpp &lt; Check_add_input.txt</msg>
+<msg timestamp="20150427 23:49:01.324" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.328" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.328" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.328" starttime="20150427 23:49:01.320"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.330" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+PG:
+
+SG:	Harper Leon, #12
+
+
+SF:
+
+PF:
+
+C:
+
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.330" starttime="20150427 23:49:01.329"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Check_add_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.331" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Check_add_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Check_add_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.331" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.331" starttime="20150427 23:49:01.330"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.332" starttime="20150427 23:49:01.332"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.337" starttime="20150427 23:49:01.332"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.338" critical="yes" starttime="20150427 23:49:01.318"></status>
+</test>
+<test id="s1-t2" timeout="1 minute" name="Check Invalid Number">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Invalid_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.340" level="INFO">Starting process:
+./hw1cpp &lt; Invalid_input.txt</msg>
+<msg timestamp="20150427 23:49:01.344" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.348" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.349" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.349" starttime="20150427 23:49:01.339"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stderr}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.350" level="INFO">Invalid choice: -1
+Please try again</msg>
+<status status="PASS" endtime="20150427 23:49:01.350" starttime="20150427 23:49:01.349"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Invalid_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.351" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Invalid_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Invalid_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.351" level="INFO">${EXPECTED} = Invalid choice: -1
+Please try again</msg>
+<status status="PASS" endtime="20150427 23:49:01.351" starttime="20150427 23:49:01.350"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.352" starttime="20150427 23:49:01.351"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stderr}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.353" starttime="20150427 23:49:01.352"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.353" critical="yes" starttime="20150427 23:49:01.338"></status>
+</test>
+<test id="s1-t3" timeout="1 minute" name="Check Invalid position">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Invalid_position_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.356" level="INFO">Starting process:
+./hw1cpp &lt; Invalid_position_input.txt</msg>
+<msg timestamp="20150427 23:49:01.360" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.365" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.365" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.365" starttime="20150427 23:49:01.356"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stderr}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.367" level="INFO">Invalid position</msg>
+<status status="PASS" endtime="20150427 23:49:01.367" starttime="20150427 23:49:01.366"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Invalid_position_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.368" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Invalid_position_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Invalid_position_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.368" level="INFO">${EXPECTED} = Invalid position</msg>
+<status status="PASS" endtime="20150427 23:49:01.368" starttime="20150427 23:49:01.367"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.369" starttime="20150427 23:49:01.369"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stderr}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.370" starttime="20150427 23:49:01.369"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.371" critical="yes" starttime="20150427 23:49:01.354"></status>
+</test>
+<test id="s1-t4" timeout="1 minute" name="Check quit program option">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; quit_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.373" level="INFO">Starting process:
+./hw1cpp &lt; quit_input.txt</msg>
+<msg timestamp="20150427 23:49:01.377" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.381" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.381" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.381" starttime="20150427 23:49:01.373"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.rc}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.382" level="INFO">0</msg>
+<status status="PASS" endtime="20150427 23:49:01.382" starttime="20150427 23:49:01.382"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>quit_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.383" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/quit_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/quit_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.383" level="INFO">${EXPECTED} = int(0)</msg>
+<status status="PASS" endtime="20150427 23:49:01.383" starttime="20150427 23:49:01.383"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = BuiltIn.Convert To Number">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.384" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20150427 23:49:01.384" level="INFO">${EXPECTED} = 0.0</msg>
+<status status="PASS" endtime="20150427 23:49:01.384" starttime="20150427 23:49:01.383"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.385" starttime="20150427 23:49:01.384"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${RESULT.rc}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.386" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'float'&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.386" starttime="20150427 23:49:01.385"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.386" critical="yes" starttime="20150427 23:49:01.371"></status>
+</test>
+<test id="s1-t5" timeout="1 minute" name="Check Display">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Display_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.388" level="INFO">Starting process:
+./hw1cpp &lt; Display_input.txt</msg>
+<msg timestamp="20150427 23:49:01.391" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.397" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.397" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.397" starttime="20150427 23:49:01.387"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.398" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+PG:
+
+SG:
+
+SF:
+
+PF:
+
+C:
+
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.398" starttime="20150427 23:49:01.398"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Display_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.399" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Display_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Display_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.400" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+PG:
+
+SG:
+
+SF:
+
+PF:
+
+C:
+
+Please choose one of the following: 
+0. Quit ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.400" starttime="20150427 23:49:01.399"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.401" starttime="20150427 23:49:01.400"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.403" starttime="20150427 23:49:01.401"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.403" critical="yes" starttime="20150427 23:49:01.386"></status>
+</test>
+<test id="s1-t6" timeout="1 minute" name="Check FirstName Input">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; FirstName_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.405" level="INFO">Starting process:
+./hw1cpp &lt; FirstName_input.txt</msg>
+<msg timestamp="20150427 23:49:01.409" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.413" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.414" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.414" starttime="20150427 23:49:01.405"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.415" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+PG:
+
+SG:
+
+SF:
+
+PF:
+
+C:	FirstName Last, #13
+
+
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.415" starttime="20150427 23:49:01.414"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>FirstName_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.416" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/FirstName_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/FirstName_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.416" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.416" starttime="20150427 23:49:01.416"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.417" starttime="20150427 23:49:01.416"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.420" starttime="20150427 23:49:01.417"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.421" critical="yes" starttime="20150427 23:49:01.404"></status>
+</test>
+<test id="s1-t7" timeout="1 minute" name="Check LastName Input">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; LastName_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.422" level="INFO">Starting process:
+./hw1cpp &lt; LastName_input.txt</msg>
+<msg timestamp="20150427 23:49:01.426" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.430" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.431" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.431" starttime="20150427 23:49:01.422"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.433" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.433" starttime="20150427 23:49:01.432"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>LastName_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.434" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/LastName_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/LastName_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.434" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.434" starttime="20150427 23:49:01.433"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.435" starttime="20150427 23:49:01.434"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.439" starttime="20150427 23:49:01.435"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.440" critical="yes" starttime="20150427 23:49:01.421"></status>
+</test>
+<test id="s1-t8" timeout="1 minute" name="Check uniform number Input">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Uniform_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.442" level="INFO">Starting process:
+./hw1cpp &lt; Uniform_input.txt</msg>
+<msg timestamp="20150427 23:49:01.446" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.450" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.451" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.450" starttime="20150427 23:49:01.441"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.452" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.452" starttime="20150427 23:49:01.451"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Uniform_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.453" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Uniform_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Uniform_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.453" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.453" starttime="20150427 23:49:01.452"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.454" starttime="20150427 23:49:01.453"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.455" starttime="20150427 23:49:01.454"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.455" critical="yes" starttime="20150427 23:49:01.440"></status>
+</test>
+<test id="s1-t9" timeout="1 minute" name="Check uniform number Input">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; Uniform_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.457" level="INFO">Starting process:
+./hw1cpp &lt; Uniform_input.txt</msg>
+<msg timestamp="20150427 23:49:01.460" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.466" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.466" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.466" starttime="20150427 23:49:01.456"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.467" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.468" starttime="20150427 23:49:01.467"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Uniform_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.469" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/Uniform_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/Uniform_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.469" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.469" starttime="20150427 23:49:01.468"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.470" starttime="20150427 23:49:01.469"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.471" starttime="20150427 23:49:01.470"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.472" critical="yes" starttime="20150427 23:49:01.455"></status>
+</test>
+<test id="s1-t10" timeout="1 minute" name="Check Valid position">
+<kw type="kw" name="${RESULT} = Process.Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>./hw1cpp &lt; ValidPosition_input.txt</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.474" level="INFO">Starting process:
+./hw1cpp &lt; ValidPosition_input.txt</msg>
+<msg timestamp="20150427 23:49:01.478" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20150427 23:49:01.482" level="INFO">Process completed.</msg>
+<msg timestamp="20150427 23:49:01.483" level="INFO">${RESULT} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" endtime="20150427 23:49:01.482" starttime="20150427 23:49:01.474"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.484" level="INFO">Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last name: Please enter the player's uniform number: Please enter the player's position.
+Valid positions are PG, SG, SF, PF, C : Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart</msg>
+<status status="PASS" endtime="20150427 23:49:01.484" starttime="20150427 23:49:01.483"></status>
+</kw>
+<kw type="kw" name="${EXPECTED} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>ValidPosition_output.txt</arg>
+</arguments>
+<msg timestamp="20150427 23:49:01.485" html="yes" level="INFO">Getting file '&lt;a href="file:///Users/LuyuanNie/Desktop/study/Python/hw3/ValidPosition_output.txt"&gt;/Users/LuyuanNie/Desktop/study/Python/hw3/ValidPosition_output.txt&lt;/a&gt;'</msg>
+<msg timestamp="20150427 23:49:01.486" level="INFO">${EXPECTED} = Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+Please enter the player's first name: Please enter the player's last ...</msg>
+<status status="PASS" endtime="20150427 23:49:01.486" starttime="20150427 23:49:01.485"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>get the expected output</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.486" starttime="20150427 23:49:01.486"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Match">
+<doc>Fails unless the given `string` matches the given `pattern`.</doc>
+<arguments>
+<arg>${RESULT.stdout}</arg>
+<arg>${EXPECTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150427 23:49:01.488" starttime="20150427 23:49:01.487"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150427 23:49:01.488" critical="yes" starttime="20150427 23:49:01.472"></status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150427 23:49:01.489" starttime="20150427 23:49:01.260"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="10">Critical Tests</stat>
+<stat fail="0" pass="10">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="10" id="s1" name="Test Hw3">Test Hw3</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20150427 23:49:01.455" level="WARN">Multiple test cases with name 'Check uniform number Input' executed in test suite 'Test Hw3'.</msg>
+</errors>
+</robot>

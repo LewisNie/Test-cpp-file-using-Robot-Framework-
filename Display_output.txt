@@ -1,0 +1,19 @@
+Welcome to Depth Chart Manager 0.01
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart
+PG:
+
+SG:
+
+SF:
+
+PF:
+
+C:
+
+Please choose one of the following: 
+0. Quit program
+1. Add to position
+2. Display depth chart

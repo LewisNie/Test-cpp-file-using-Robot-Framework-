@@ -1,0 +1,19 @@
+*** Setting ***
+Variables    grade.py
+*** Variables ***
+${weather}    sunny
+${name}    luyuan Nie
+@{week}    Monday Tuesday Thursday Friday
+${abc}    True
+*** Keywords ***
+record
+    [Arguments]    ${text}
+    Log    ${text}
+*** Test Cases ***
+test1
+  Log    For ${person['name']}, the grade obtained was ${person['grade']}
+  Log    one week have @{week} days
+  Log    my name is ${name}
+  record  week[0] = @{week}[0]       
+Assertion example    should be True    ${abc}
+  Take Screenshot  screenpic.jpg  width=500 px   
